@@ -1,0 +1,33 @@
+Analysis
+Domain:
+A fleet has multiple boats
+- Each boat has type, name, year, make/model, length, purchase price, and money spent
+- The system can load boats from a CSV file or a saved database file
+- A user can print, add, remove, and authorize expenses for boats
+Function points:
+- Start the program and load the fleet
+- Show a menu for user actions
+- Print the full fleet report
+- Add a new boat using a CSV input line
+- Remove a boat by name
+- Spend money on a boat (if allowed)
+- Save all boats before exiting
+Scenarios:
+- Program starts with boats already loaded
+- User adds a new boat and it appears in the list
+- User removes a boat and it disappears from the list
+- Expense approved (enough money left)
+- Expense denied (not enough money left)
+- Invalid menu input prints error message
+- Trying to remove or spend on a boat that doesn’t exist prints an error
+Design
+Classes:
+- Boat
+- BoatType (enum)
+- FleetManagement
+Data:
+- Boat: type, name, year, make/model, lengthFeet, purchasePrice, expenses
+- FleetManagement: boat list, scanner, DB filename
+Methods:
+- Boat: constructor, getters, authorizeExpense(), getRemainingAllowance(), toString()
+- FleetManagement: main(), loadFromCsv(), saveToDb(), loadFromDb(), printFleetReport(), addBoat(), removeBoat(), handleExpense(), findBoat()
